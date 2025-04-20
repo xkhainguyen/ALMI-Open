@@ -1,0 +1,18 @@
+python train_almi_cl_400sl.py  \
+--num-obs 71 \
+--exp-name test_cl_400sl \
+--batch-size 64 \
+--num-layers 9 \
+--embed-dim-gpt 256 \
+--n-head-gpt 16 \
+--seq-length 400 \
+--ff-rate 4 \
+--drop-out-rate 0.1 \
+--out-dir output \
+--total-epoch 10000 \
+--lr-scheduler 100000 \
+--lr 0.0001 \
+--dataname almi \
+--dilation-growth-rate 3 \
+--device cuda:0 \
+--pred-action

@@ -1,0 +1,24 @@
+python train_almi_ol.py  \
+--num-obs 71 \
+--exp-name test_ol \
+--batch-size 128 \
+--num-layers 9 \
+--embed-dim-gpt 256 \
+--n-head-gpt 16 \
+--seq-length 20 \
+--ff-rate 4 \
+--drop-out-rate 0.1 \
+--out-dir output \
+--total-epoch 10000 \
+--lr-scheduler 150000 \
+--lr 0.0001 \
+--dataname almi \
+--dilation-growth-rate 3 \
+--device cuda:0 \
+--vq-name test_vq \
+--resume-pth output/test_vq/vq_net_0.pth \
+--nb-code 1024 \
+--vq-act relu \
+--down-t 2 \
+--block-size 176 \
+--max-motion-len 700
