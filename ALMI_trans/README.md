@@ -63,7 +63,7 @@ python export.py \
     --export_name trans_net_export
 ```
 
-#### 5.2 Play trained transformer model in mujoco
+### 5.2 Play trained transformer model in mujoco
 
 You can download our trained checkpoints after exporting at: <https://huggingface.co/TeleEmbodied/ALMI-trans>
 
