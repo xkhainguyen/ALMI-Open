@@ -20,7 +20,7 @@
 
 ## Overview
 
-In this repository, we release "ALMI-X dataset collection code" in `Data_Collection`, "ALMI-X foundation model training code" and "LMI-X foundation model's checkpoint and inference code" in `ALMI_trans`. Please refer to [Data_Collection](/Data_Collection/README.md) and [ALMI_trans](/ALMI_trans/README.md) for installation and usage. You can also download our trained foundation model checkpoints at [ALMI-trans](https://huggingface.co/TeleEmbodied/ALMI-trans)
+In this repository, we release "ALMI-X dataset collection code" in `Data_Collection`, "ALMI-X foundation model training and inference code" in `ALMI_trans`. Please refer to [Data_Collection](/Data_Collection/README.md) and [ALMI_trans](/ALMI_trans/README.md) for installation and usage. You can also download our trained foundation model checkpoints at [ALMI-trans](https://huggingface.co/TeleEmbodied/ALMI-trans)
 <img src="./imgs/data_foundation_4_00.png"/>
 
 
