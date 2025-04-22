@@ -3,7 +3,7 @@
 <div align="center">
 
 [[Website]](https://almi-humanoid.github.io)
-[[Arxiv]](https://almi-humanoid.github.io/static/view.pdf)
+[[Arxiv]](https://arxiv.org/abs/2504.14305)
 [[Dataset]](https://huggingface.co/datasets/TeleEmbodied/ALMI-X)
 
 
@@ -27,7 +27,15 @@ In this repository, we release "ALMI-X dataset collection code" in `Data_Collect
 ## Citation
 If you find our work useful, please consider citing us!
 ```
-Coming soon!
+        @misc{shi2025almi,
+          title={Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning}, 
+          author={Jiyuan Shi and Xinzhe Liu and Dewei Wang and Ouyang Lu and Sören Schwertfeger and Fuchun Sun and Chenjia Bai and Xuelong Li},
+          year={2025},
+          eprint={2504.14305},
+          archivePrefix={arXiv},
+          primaryClass={cs.RO},
+          url={https://arxiv.org/abs/2504.14305}, 
+    }
 ```
 
 
