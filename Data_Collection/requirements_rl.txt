@@ -78,7 +78,6 @@ ipdb==0.13.13
 ipykernel @ file:///home/conda/feedstock_root/build_artifacts/ipykernel_1719845459717/work
 ipython @ file:///home/conda/feedstock_root/build_artifacts/ipython_1683289033986/work
 # Editable install with no version control (isaacgym==1.0rc4)
--e /home/bcj/isaacgym/python
 jax==0.4.13
 jaxlib==0.4.13
 jedi @ file:///home/conda/feedstock_root/build_artifacts/jedi_1696326070614/work
@@ -187,7 +186,6 @@ requests-oauthlib==2.0.0
 rich==13.9.4
 rich-click==1.8.5
 rsa==4.9
--e git+ssh://git@github.com/shijiyuanaa/new_unitree_rl.git@a9331021d975322423d648b03274ffa7db6df3f5#egg=rsl_rl&subdirectory=rsl_rl
 ruff==0.11.0
 safetensors==0.5.3
 sapien==2.2.2
@@ -233,11 +231,6 @@ typing==3.7.4.3
 typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1717802530399/work
 tzdata==2025.1
 u-msgpack-python==2.8.0
-# Editable install with no version control (unitree_dds_wrapper==0.1.0)
--e /home/bcj/deploy/avp_teleoperate/unitree_dds_wrapper/python
--e git+ssh://git@github.com/shijiyuanaa/new_unitree_rl.git@a9331021d975322423d648b03274ffa7db6df3f5#egg=unitree_rl_gym
-# Editable install with no version control (unitree_sdk2py==1.0.1)
--e /home/bcj/deploy/unitree_sdk2_python
 urllib3 @ file:///croot/urllib3_1727769808118/work
 uvicorn==0.33.0
 vuer==0.0.32rc7
