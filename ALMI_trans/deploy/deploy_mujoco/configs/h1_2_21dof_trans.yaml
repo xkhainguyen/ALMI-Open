@@ -1,10 +1,10 @@
-policy_path: "/your/export/ckpt/path"
+policy_path: "/home/rtx3/khai/ALMI-Open/ALMI_trans/output/export/policy_trans_trans_net_almi_400sl_action_1260.pt"
 input_seq_len: 400
 xml_path: "./deploy/robots/h1_2/scene_21dof.xml"
 
 
 # Total simulation time
-simulation_duration: 8
+simulation_duration: 20
 # Simulation time step
 simulation_dt: 0.002
 # Controller update frequency (meets the requirement of simulation_dt * controll_decimation=0.02; 50Hz)

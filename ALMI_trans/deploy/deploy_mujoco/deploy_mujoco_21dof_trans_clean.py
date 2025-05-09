@@ -6,9 +6,7 @@ import numpy as np
 from legged_gym import LEGGED_GYM_ROOT_DIR
 import torch
 import yaml
-import joblib
 import clip
-from legged_gym.trans_model.vqvae import HumanVQVAE
 
 def get_gravity_orientation(quaternion):
     qw = quaternion[0]
@@ -62,6 +60,7 @@ if __name__ == "__main__":
     # load clip model
     # clip_model, clip_preprocess = clip.load("/home/bcj/new_unitree_rl_gym/legged_gym/trans_model/ViT-B-32.pt", device=torch.device('cpu'), jit=False)
     clip_model, clip_preprocess = clip.load("./pretrained/ViT-B-32.pt", device=torch.device('cpu'), jit=False)
+    # clip_model, clip_preprocess = clip.load("ViT-B/32", device=torch.device('cpu'), jit=False)
     clip.model.convert_weights(clip_model)  # Actually this line is unnecessary since clip by default already on float16
     clip_model.eval()
     for p in clip_model.parameters():
@@ -70,6 +69,7 @@ if __name__ == "__main__":
 
     # encode text
     clip_text = "Robot go forward fast and wave left."
+    # clip_text = "Robot stands still and waves right."
     text = clip.tokenize(clip_text, truncate=True).to("cpu")
     feat_clip_text = clip_model.encode_text(text).float()
 
