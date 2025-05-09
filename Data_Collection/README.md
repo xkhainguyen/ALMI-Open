@@ -1,16 +1,16 @@
-Using this repo to collect ALMI-X dataset.
+Using this repo to collect ALMI-X dataset. And we also upload our dataset at <https://huggingface.co/datasets/TeleEmbodied/ALMI-X>.
 
 ## 1. Select Motion
 
 ### 1.1 Create conda environments
 create conda enviroment:
 ``` bash
-conda create -n almi-rl python==3.8 # same as the ALMI_EL env
-conda activate almi-rl
+conda create -n almi-data_collection python==3.8
+conda activate almi-data_collection
 cd Data_Collection
-pip install -r requirements_rl.txt
+pip install -r requirements_dc.txt
 
-conda create -n create_text_annotation python==3.8
+conda create -n create_text_annotation python==3.10
 conda activate create_text_annotation
 cd Data_Collection
 pip install -r requirements_text.txt
@@ -37,9 +37,11 @@ Put these files to `Data_Collection/origin_data`.
 
 Filter satisfied motions from original dataset.
 
+You can also download selected motions files at <https://huggingface.co/datasets/TeleEmbodied/ALMI-X/blob/main/select_motions.zip>, and unzip them into `select_data`.
+
 ``` bash
 cd Data_collection
-conda activate almi-rl
+conda activate almi-data_collection
 python select_motion_first.py
 ```
 
@@ -63,7 +65,7 @@ Then filter these 835 motions by hand:
 
 ``` bash
 cd Data_collection
-conda activate almi-rl
+conda activate almi-data_collection
 python ./mujoco/check_motions.py
 ```
 
@@ -83,8 +85,8 @@ where "no" in third column means delete this motion from dataset.
 ### 1.5 Expand the motions and texts
 ``` bash
 cd Data_collection
-conda activate almi-rl
-python ./get_motion_nums.py
+conda activate almi-data_collection
+python get_motion_nums.py
 ```
 
 This will create a `Data_Collection/motion_num_dict.pkl` file saving the number that each motion's expanding number. (If motion is deleted, the expanding number is 0).
@@ -92,7 +94,7 @@ This will create a `Data_Collection/motion_num_dict.pkl` file saving the number 
 Then expand the text description
 ``` bash
 cd Data_collection
-conda activate almi-rl
+conda activate almi-data_collection
 python ./expand_text.py
 ```
 Then the text total number is: 81549
@@ -101,7 +103,7 @@ Then the text total number is: 81549
 
 ``` bash
 cd Data_collection
-conda activate almi-rl
+conda activate almi-data_collection
 python ./mujoco/save_trajectory_data.py
 ```
 

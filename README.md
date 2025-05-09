@@ -12,7 +12,7 @@
 </div>
 
 ## TODO
-- [ ] Release ALMI training code
+- [x] Release ALMI training code
 - [ ] Release ALMI deployment code
 - [x] Release ALMI-X dataset collection code
 - [x] Release ALMI-X foundation model training code
@@ -20,8 +20,9 @@
 
 ## Overview
 
-In this repository, we release "ALMI-X dataset collection code" in `Data_Collection`, "ALMI-X foundation model training and inference code" in `ALMI_trans`. Please refer to [Data_Collection](/Data_Collection/README.md) and [ALMI_trans](/ALMI_trans/README.md) for installation and usage. You can also download our trained foundation model checkpoints at [ALMI-trans](https://huggingface.co/TeleEmbodied/ALMI-trans)
+In this repository, we release "ALMI policy training code" in `ALMI_RL`, "ALMI-X dataset collection code" in `Data_Collection`, "ALMI-X foundation model training and inference code" in `ALMI_trans`. Please refer to [ALMI_RL](/ALMI_RL/README.md), [Data_Collection](/Data_Collection/README.md) and [ALMI_trans](/ALMI_trans/README.md) for installation and usage. You can also download our trained foundation model checkpoints at [ALMI-trans](https://huggingface.co/TeleEmbodied/ALMI-trans)
 <img src="./imgs/data_foundation_4_00.png"/>
+
 
 
 ## Citation

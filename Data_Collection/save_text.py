@@ -94,7 +94,7 @@ for i in range(len(motion_name)):
                 text_complete = "Robot " + text_lower + " and " + text_upper + "."
                 text_format = convert_sentence(text_complete)
                 text_list.append(text_format)
-                tpath = "./select_data/text_no_expand/" + motion_name[i] + "-" + text_lower_direction.replace(" ","_")+ "-" + (text_lower_speed if text_lower_speed != "" else "zero") + "_" + str(idx)
+                tpath = "./text_no_expand/" + motion_name[i] + "-" + text_lower_direction.replace(" ","_")+ "-" + (text_lower_speed if text_lower_speed != "" else "zero") + "_" + str(idx)
                 path = tpath + ".txt"
                 with open(path, "w") as f:
                     f.write(text_format)
@@ -127,7 +127,7 @@ for i in range(len(motion_name)):
             text_complete = "Robot " + text_lower + " and " + text_upper + "."
             text_format = convert_sentence(text_complete)
             text_list.append(text_format)
-            tpath = "./select_data/text_no_expand/" + motion_name[i] + "-" + text_lower_direction.replace(" ","_")+ "-" + "fixed"  + "_" + str(idx)
+            tpath = "./text_no_expand/" + motion_name[i] + "-" + text_lower_direction.replace(" ","_")+ "-" + "fixed"  + "_" + str(idx)
             path = tpath + ".txt"
             with open(path, "w") as f:
                 f.write(text_format)  
@@ -158,7 +158,7 @@ for i in range(len(motion_name)):
             text_complete = "Robot " + text_lower + " and " + text_upper + "."
             text_format = convert_sentence(text_complete)
             text_list.append(text_format)
-            tpath = "./select_data/text_no_expand/" + motion_name[i] + "-" + text_lower_direction.replace(" ","_")+ "-" + (text_lower_speed if text_lower_speed != "" else "zero")  + "_" + str(idx)
+            tpath = "./text_no_expand/" + motion_name[i] + "-" + text_lower_direction.replace(" ","_")+ "-" + (text_lower_speed if text_lower_speed != "" else "zero")  + "_" + str(idx)
             path = tpath + ".txt"
             with open(path, "w") as f:
                 f.write(text_format)
@@ -186,7 +186,7 @@ for i in range(len(motion_name)):
         text_complete = "Robot " + text_lower + " and " + text_upper + "."
         text_format = convert_sentence(text_complete)
         text_list.append(text_format)
-        tpath = "./select_data/text_no_expand/" + motion_name[i] + "-" + text_lower_direction.replace(" ","_")+ "-" + "fixed"  + "_" + str(idx)
+        tpath = "./text_no_expand/" + motion_name[i] + "-" + text_lower_direction.replace(" ","_")+ "-" + "fixed"  + "_" + str(idx)
         path = tpath +  ".txt"
         with open(path, "w") as f:
             f.write(text_format)
@@ -202,5 +202,5 @@ for i in range(len(motion_name)):
 # # for i in range(800):
 # # print(cmd_list)
 # # print(text_list)
-joblib.dump(cmd_list, "./select_data/cmd/cmd_list.pkl")
-joblib.dump(npy_name_list, "./select_data/npy_name_list.pkl")
+joblib.dump(cmd_list, "./cmd/cmd_list.pkl")
+joblib.dump(npy_name_list, "./npy_name_list.pkl")
