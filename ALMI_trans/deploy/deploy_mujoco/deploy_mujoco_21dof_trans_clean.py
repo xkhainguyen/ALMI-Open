@@ -68,8 +68,8 @@ if __name__ == "__main__":
     print("successfully load clip model")
 
     # encode text
-    clip_text = "Robot go forward fast and wave left."
-    # clip_text = "Robot stands still and waves right."
+    # clip_text = "Robot go forward fast and wave left."
+    clip_text = "Robot stands still."
     text = clip.tokenize(clip_text, truncate=True).to("cpu")
     feat_clip_text = clip_model.encode_text(text).float()
 
@@ -138,7 +138,7 @@ if __name__ == "__main__":
                 else:
                     trajectory_history = torch.concat((trajectory_history[:, 1:], obs_tensor.unsqueeze(1)), dim=1)
                 
-                action = policy(trajectory_history, feat_clip_text).detach().numpy().squeeze() # actor(obs_tensor).detach().numpy().squeeze()
+                action = policy(trajectory_history * 0.0, feat_clip_text).detach().numpy().squeeze() # actor(obs_tensor).detach().numpy().squeeze()
                 if num_frame < obs_history_len:
                     # action = action[num_frame, -23:-2]
                     action = action[num_frame, :]
@@ -149,6 +149,7 @@ if __name__ == "__main__":
                                 
                 # transform action to target_dof_pos
                 target_dof_pos = action * action_scale + default_angles
+                import ipdb; ipdb.set_trace()
 
             # Pick up changes to the physics state, apply perturbations, update options from GUI.
             viewer.sync()

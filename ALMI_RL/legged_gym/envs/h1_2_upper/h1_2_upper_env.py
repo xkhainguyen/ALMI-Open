@@ -266,7 +266,7 @@ class H1_2_WholeBody(LeggedRobot):
     def update_arm_curriculum(self, env_ids):
         mean_episode_length = torch.sum(self.episode_length_buf[env_ids]) / len(env_ids)
         if mean_episode_length / self.max_episode_length > 0.8:
-            print(f'Mean_episode_length is{mean_episode_length}, Increase arm weight!')
+            # print(f'Mean_episode_length is{mean_episode_length}, Increase arm weight!')
             self.arm_weight += 0.001  # 0.05 is too big 
         elif self.arm_weight > 0.01:
             self.arm_weight -= 0.01

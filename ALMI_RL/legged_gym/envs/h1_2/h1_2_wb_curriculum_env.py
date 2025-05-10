@@ -154,7 +154,7 @@ class H1_2_WholeBody(LeggedRobot):
         if self.cfg.terrain.curriculum:
         # # avoid updating command curriculum at each step since the maximum command is common to all envs
             self._update_terrain_curriculum(env_ids)
-            print("terrain update")   
+            # print("terrain update")   
         if self.cfg.commands.curriculum and (self.common_step_counter % self.max_episode_length == 0):
             self.update_command_curriculum(env_ids)
                  
