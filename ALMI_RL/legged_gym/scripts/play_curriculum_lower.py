@@ -70,7 +70,11 @@ def play(args):
     env_cfg.domain_rand.push_interval_s = 5
 
     env_cfg.env.test = True
+<<<<<<< HEAD
     env_cfg.commands.ranges.lin_vel_x = [0.5, 0.0]
+=======
+    env_cfg.commands.ranges.lin_vel_x = [0.0, 0.0]
+>>>>>>> 48278cfe2af9586269563fe95574e4fb4a9d3eeb
     env_cfg.commands.ranges.lin_vel_y = [0.0, 0.0]  
     
     env_cfg.commands.ranges.ang_vel_yaw = [0.0, 0.0]
@@ -103,6 +107,7 @@ def play(args):
     ppo_runner, train_cfg = task_registry.make_alg_runner(env=env, name=args.task, args=args, train_cfg=train_cfg)
     policy = ppo_runner.get_inference_policy(device=env.device)
     upper_policy = ppo_runner.upper_actor_critic.act_inference
+<<<<<<< HEAD
 
 
     # export policy as a jit module (used to run it from C++)
@@ -112,6 +117,9 @@ def play(args):
         print('Exported policy as jit script to: ', path)
 
 
+=======
+    
+>>>>>>> 48278cfe2af9586269563fe95574e4fb4a9d3eeb
     lootat = env.root_states[0,:3].detach().cpu().numpy()
     camara_position = lootat + [5,-2,2]
     env.set_camera(camara_position, lootat)
@@ -133,7 +141,11 @@ def play(args):
 
     print("done")
 if __name__ == '__main__':
+<<<<<<< HEAD
     EXPORT_POLICY = False
+=======
+    EXPORT_POLICY = True
+>>>>>>> 48278cfe2af9586269563fe95574e4fb4a9d3eeb
     RECORD_FRAMES = False
     MOVE_CAMERA = False
     

@@ -274,7 +274,11 @@ class H1_2_WholeBodyCfgPPO(LeggedRobotCfgPPO):
         policy_class_name = "RNNActorMLPCritic"
         algorithm_class_name = "PPO"
 
+<<<<<<< HEAD
         lower_policy_path = "/home/rtx3/khai/ALMI-Open/ALMI_RL/logs/h1_2_wb_curriculum/May09_21-33-22_lower_body_iteration1/model_19000.pt" # change to your lower body policy path!
+=======
+        lower_policy_path = "" # change to your lower body policy path!
+>>>>>>> 48278cfe2af9586269563fe95574e4fb4a9d3eeb
 
 
         max_iterations = 100000
