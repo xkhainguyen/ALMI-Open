@@ -93,5 +93,5 @@ python legged_gym/scripts/train.py \
 Then you can play:
 
 ``` bash
-python legged_gym/scripts/play_curriculum.py --task=h1_2_lower --load_run=xxx --checkpoint=xxx
+python legged_gym/scripts/play_curriculum_lower.py --task=h1_2_lower --load_run=xxx --checkpoint=xxx
 ```

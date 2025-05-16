@@ -70,7 +70,7 @@ def play(args):
     env_cfg.domain_rand.push_interval_s = 5
 
     env_cfg.env.test = True
-    env_cfg.commands.ranges.lin_vel_x = [0.0, 0.0]
+    env_cfg.commands.ranges.lin_vel_x = [0.5, 0.0]
     env_cfg.commands.ranges.lin_vel_y = [0.0, 0.0]  
     
     env_cfg.commands.ranges.ang_vel_yaw = [0.0, 0.0]
@@ -103,7 +103,15 @@ def play(args):
     ppo_runner, train_cfg = task_registry.make_alg_runner(env=env, name=args.task, args=args, train_cfg=train_cfg)
     policy = ppo_runner.get_inference_policy(device=env.device)
     upper_policy = ppo_runner.upper_actor_critic.act_inference
-    
+
+
+    # export policy as a jit module (used to run it from C++)
+    if EXPORT_POLICY:
+        path = os.path.join(LEGGED_GYM_ROOT_DIR, 'logs', train_cfg.runner.experiment_name, args.load_run, 'exported')
+        export_policy_as_jit(ppo_runner.alg.actor_critic, path, checkpoint=args.checkpoint)
+        print('Exported policy as jit script to: ', path)
+
+
     lootat = env.root_states[0,:3].detach().cpu().numpy()
     camara_position = lootat + [5,-2,2]
     env.set_camera(camara_position, lootat)
@@ -125,7 +133,7 @@ def play(args):
 
     print("done")
 if __name__ == '__main__':
-    EXPORT_POLICY = True
+    EXPORT_POLICY = False
     RECORD_FRAMES = False
     MOVE_CAMERA = False
     

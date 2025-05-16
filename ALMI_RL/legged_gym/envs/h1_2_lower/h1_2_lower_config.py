@@ -271,7 +271,7 @@ class H1_2_WholeBodyCfgPPO(LeggedRobotCfgPPO):
         policy_class_name = "RNNActorMLPCritic"
         algorithm_class_name = "PPO"
 
-        upper_policy_path = '' # change to your upper body policy path!
+        upper_policy_path = '/home/rtx3/khai/ALMI-Open/ALMI_RL/logs/h1_2_upper/May10_11-19-49_upper_body_iteration1/model_4300.pt' # change to your upper body policy path!
 
 
         max_iterations = 100000
